@@ -10,6 +10,7 @@ public class PajaroController : MonoBehaviour
     public float gravity;
 
     public int score;
+    public AudioSource jumpSound;
 
     void Awake()
     {
@@ -35,6 +36,7 @@ public class PajaroController : MonoBehaviour
             
             mi_rigBody.velocity = Vector3.zero;
             mi_rigBody.AddForce(Vector3.up * force, ForceMode.VelocityChange); 
+            jumpSound.Play();
         }
         
     }
